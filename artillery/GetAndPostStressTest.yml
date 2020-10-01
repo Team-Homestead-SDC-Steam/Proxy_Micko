@@ -1,0 +1,40 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 25
+      name: Warm-up
+    - duration: 300
+      arrivalRate: 50
+      name: Ramping-up
+    - duration: 600
+      arrivalRate: 50
+      rampTo: 100
+      name: Ramp up to 100 users in 600 seconds, no VUsers limit
+  processor: "./processor/generateDataToPost.js"
+  payload:
+    path: "gameIds.csv"
+    fields:
+      - "gameId"
+scenarios:
+  - name: "Get ALL reviews of game"
+    flow:
+      - get:
+          url: "/api/gamereviews/{{ gameId }}"
+  - name: "Post a new review"
+    flow:
+      - function: "generateData"
+      - post:
+          url: "/api/gamereviews/post/{{ id_game }}"
+          json:
+            num_comments: "{{ num_comments }}"
+            num_found_funny: "{{ num_found_funny}}"
+            num_found_helpful: "{{ num_found_helpful }}"
+            hours_at_review_time: "{{ hours_at_review_time }}"
+            hours_on_record: "{{ hours_on_record }}"
+            is_recommended: "{{ is_recommended }}"
+            purchase_type: "{{ purchase_type }}"
+            date_posted: "{{ date_posted }}"
+            id_user: "{{ id_user }}"
+            received_free: "{{ received_free }}"
+            review_text: "{{ review_text }}"
