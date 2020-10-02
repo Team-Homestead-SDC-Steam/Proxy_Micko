@@ -23,12 +23,12 @@ module.exports = {
       scripts: [
         '/vendor.bundle.js',
         '/bundle.js',
-        {
-          src: 'http://localhost:3001/vendor.bundle.js',
+        { //reviews
+          src: 'http://3.137.180.221:3001/vendor.bundle.js',
           defer: 'defer'
         },
         {
-          src: 'http://localhost:3001/bundle.js',
+          src: 'http://3.137.180.221:3001/bundle.js',
           defer: 'defer'
         },
         // {
