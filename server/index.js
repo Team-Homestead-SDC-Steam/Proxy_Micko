@@ -20,7 +20,7 @@ gameReviews.get('/:gameid', (req, res) => {
   let { gameid } = req.params;
   // Build url string with filter query support
   // let urlStr = `http://ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3001/api/gamereviews/${gameid}`;
-  let urlStr = `http://localhost:3001/api/gamereviews/${gameid}`;
+  let urlStr = `http://3.137.180.221:3001/api/gamereviews/${gameid}`;
 
   if (Object.keys(req.query).length) {
     urlStr += '?';
@@ -50,7 +50,7 @@ gameReviews.post('/post/:id_game', (req,res) => {
     ...gameid,
     ...req.body
   }
-  let urlStr = `http://localhost:3001/api/create/${gameid}`;
+  let urlStr = `http://3.137.180.221:3001/api/create/${gameid}`;
 
   fetch(urlStr, {
     method: 'POST',
