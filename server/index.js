@@ -21,7 +21,7 @@ gameReviews.get('/:gameid', (req, res) => {
   // Build url string with filter query support
   // let urlStr = `http://ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3001/api/gamereviews/${gameid}`;
   let urlStr = `http://18.220.196.29:3001/api/gamereviews/${gameid}`;
-
+  console.log('GET ', gameid)
   if (Object.keys(req.query).length) {
     urlStr += '?';
   }
@@ -45,7 +45,7 @@ gameReviews.get('/:gameid', (req, res) => {
 
 gameReviews.post('/post/:id_game', (req,res) => {
   let gameid = req.params;
-  console.log(gameid)
+  console.log('POSTING', gameid)
   let body = {
     ...gameid,
     ...req.body
