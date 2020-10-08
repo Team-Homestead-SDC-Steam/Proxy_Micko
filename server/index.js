@@ -18,6 +18,7 @@ const gameReviews = express.Router();
 app.use('/api/gamereviews', gameReviews);
 gameReviews.get('/:gameid', (req, res) => {
   let { gameid } = req.params || req.query;
+  console.log(req.url);
   // Build url string with filter query support
   // let urlStr = `http://ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3001/api/gamereviews/${gameid}`;
   let urlStr = `http://18.220.196.29:3001/api/gamereviews/${gameid}`;
