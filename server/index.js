@@ -16,7 +16,8 @@ app.use(bodyParser.json());
  */
 const gameReviews = express.Router();
 app.use('/api/gamereviews', gameReviews);
-gameReviews.get('/:gameid', (req, res) => {
+// gameReviews.get('/:gameid', (req, res) => {
+  gameReviews.get('/', (req, res) => {
   let { gameid } = req.params || req.query;
   console.log(req.url);
   // Build url string with filter query support
