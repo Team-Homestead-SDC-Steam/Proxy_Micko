@@ -25,7 +25,7 @@ gameReviews.get('/:gameid', (req, res) => {
   //let urlStr = `http://18.220.196.29:3001/api/gamereviews/${gameid}`;
 
   //nginx address: http://13.58.60.88/
-  let urlStr = `http://13.58.60.88:80/api/gamereviews/${gameid}`;
+  let urlStr = `http://13.58.60.88:80/${gameid}`;
   console.log('GET ', gameid)
   if (Object.keys(req.query).length) {
     urlStr += '?';
