@@ -24,11 +24,13 @@ module.exports = {
         '/vendor.bundle.js',
         '/bundle.js',
         { //reviews
-          src: 'http://18.220.196.29:3001/vendor.bundle.js',
+          //src: 'http://18.220.196.29:3001/vendor.bundle.js',
+          src: 'http://3.133.151.255:3002/vendor.bundle.js',
           defer: 'defer'
         },
         {
-          src: 'http://18.220.196.29:3001/bundle.js',
+          //src: 'http://18.220.196.29:3001/bundle.js',
+          src: 'http://3.133.151.255:3002/bundle.js',
           defer: 'defer'
         },
         // {
