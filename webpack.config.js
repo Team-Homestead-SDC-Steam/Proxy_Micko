@@ -28,11 +28,11 @@ module.exports = {
           src: 'http://3.133.151.255:3002/vendor.bundle.js',
           defer: 'defer'
         },
-        {
-          //src: 'http://18.220.196.29:3001/bundle.js',
-          src: 'http://3.133.151.255:3002/bundle.js',
-          defer: 'defer'
-        },
+        // {
+        //   //src: 'http://18.220.196.29:3001/bundle.js',
+        //   src: 'http://3.133.151.255:3002/bundle.js',
+        //   defer: 'defer'
+        // },
         // {
         //   src: 'http://ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3001/vendor.bundle.js',
         //   defer: 'defer'
