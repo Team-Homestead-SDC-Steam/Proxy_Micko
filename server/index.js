@@ -16,13 +16,16 @@ app.use(bodyParser.json());
  */
 const gameReviews = express.Router();
 app.use('/api/gamereviews', gameReviews);
- gameReviews.get('/:gameid', (req, res) => {
+gameReviews.get('/:gameid', (req, res) => {
   // gameReviews.get('/', (req, res) => {
   let { gameid } = req.params;
   //let { gameid } = req.query;
   // Build url string with filter query support
-  // let urlStr = `http://ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3001/api/gamereviews/${gameid}`;
-  let urlStr = `http://18.220.196.29:3001/api/gamereviews/${gameid}`;
+
+  //let urlStr = `http://18.220.196.29:3001/api/gamereviews/${gameid}`;
+
+  //nginx address: http://13.58.60.88/
+  let urlStr = `http://13.58.60.88/reviews/api/gamereviews/${gameid}`;
   console.log('GET ', gameid)
   if (Object.keys(req.query).length) {
     urlStr += '?';
@@ -52,7 +55,8 @@ gameReviews.post('/post/:id_game', (req,res) => {
     ...gameid,
     ...req.body
   }
-  let urlStr = `http://18.220.196.29:3001/api/create/${gameid}`;
+  //let urlStr = `http://18.220.196.29:3001/api/create/${gameid}`;
+  let urlStr = `http://13.58.60.88/reviews/api/create/${gameid}`;
 
   fetch(urlStr, {
     method: 'POST',
