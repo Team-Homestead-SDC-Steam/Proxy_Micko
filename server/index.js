@@ -56,7 +56,7 @@ gameReviews.post('/post/:id_game', (req,res) => {
     ...req.body
   }
   //let urlStr = `http://18.220.196.29:3001/api/create/${gameid}`;
-  let urlStr = `http://3.133.151.255:3002/api/create/${gameid}`;
+  let urlStr = `http://18.219.219.9:3001/api/create/${gameid}`;
 
   fetch(urlStr, {
     method: 'POST',
