@@ -25,7 +25,7 @@ gameReviews.get('/:gameid', (req, res) => {
   //let urlStr = `http://18.220.196.29:3001/api/gamereviews/${gameid}`;
 
   //nginx address: http://13.58.60.88/
-  let urlStr = `http://13.58.60.88/reviews/api/gamereviews/${gameid}`;
+  let urlStr = `http://13.58.60.88/api/gamereviews/${gameid}`;
   console.log('GET ', gameid)
   if (Object.keys(req.query).length) {
     urlStr += '?';
@@ -56,7 +56,7 @@ gameReviews.post('/post/:id_game', (req,res) => {
     ...req.body
   }
   //let urlStr = `http://18.220.196.29:3001/api/create/${gameid}`;
-  let urlStr = `http://13.58.60.88/reviews/api/create/${gameid}`;
+  let urlStr = `http://13.58.60.88/api/create/${gameid}`;
 
   fetch(urlStr, {
     method: 'POST',
