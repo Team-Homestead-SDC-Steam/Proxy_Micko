@@ -3,7 +3,7 @@
  * @param {Integer} gameid: int between 1-100, inclusive
  */
 export const fetchGameTitle = (gameid) => {
-  if (!gameid || gameid > 30000 || gameid < 1) {
+  if (!gameid || gameid > 10000000 || gameid < 1) {
     throw new Error('Invalid game id');
   }
 
@@ -20,7 +20,7 @@ export const getPathId = () => {
   let pathId = 1;
   if (pathArr.length) {
     pathId = parseInt(pathArr.slice(-1)[0]);
-    if (Number.isNaN(pathId) || pathId > 30000 || pathId < 1) {
+    if (Number.isNaN(pathId) || pathId > 10000000 || pathId < 1) {
       pathId = 1;
     }
   }
